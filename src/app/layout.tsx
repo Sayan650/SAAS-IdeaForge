@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import db from "@/lib/supabase/db";
+import { DM_Sans } from "next/font/google";
 import { ThemeProvider } from "@/lib/providers/next-theme-providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "IdeaForge",
@@ -16,14 +17,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log(db)
+  console.log(db);
   return (
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-        {children}
+          {children}
         </ThemeProvider>
-        </body>
+      </body>
     </html>
   );
 }
