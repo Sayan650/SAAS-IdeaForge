@@ -105,53 +105,71 @@ const SignUpPage = () => {
         >
           An all-In-One Collaboration and Productivity Platform
         </FormDescription>
-        <FormField
-          disabled={isLoading}
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input type="email" placeholder="Email" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          disabled={isLoading}
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input type="password" placeholder="Password" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          disabled={isLoading}
-          control={form.control}
-          name="confirmPassword"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input
-                  type="password"
-                  placeholder="Confirm Password"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        {!confirmation && !codeExchangeError && (
+            <>
+              <FormField
+              disabled={isLoading}
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="Email"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              disabled={isLoading}
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="Password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              disabled={isLoading}
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="Confirm Password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button
+              type="submit"
+              className="w-full p-6"
+              disabled={isLoading}
+            >
+              {!isLoading ? 'Create Account' : <Loader />}
+            </Button>
+            </>
+        )}
+        
         {submitError && <FormMessage>{submitError}</FormMessage>}
-        <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
-          {!isLoading ? "Sign Up" : <Loader />}
-        </Button>
+        
         <span className="self-center text-left flex justify-start items-start">
           {" "}
           Already have an account ?{" "}

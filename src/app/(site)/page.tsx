@@ -13,10 +13,12 @@ import clsx from 'clsx';
 import CustomCard from '@/components/landing-page/custom-card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
+import Header from '@/components/landing-page/header';
 
 const HomePage = () => {
   return (
     <>
+      {/* <Header/> */}
       <section
         className=" overflow-hidden
       px-4
