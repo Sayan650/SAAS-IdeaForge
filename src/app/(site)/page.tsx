@@ -54,7 +54,7 @@ const HomePage = () => {
             bg-background
           "
           >
-            Get Cypress Free
+            Get IdeaForge Free
           </Button>
         </div>
         <div

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import Loading from '../../public/Spinner.svg'
+import Loading from '../../../public/Spinner.svg'
 
 const Loader = () => {
   return (
